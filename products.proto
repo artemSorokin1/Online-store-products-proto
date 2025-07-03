@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package github.com.artemSorokin1.product_grpc_api;
+
+option go_package = "github.com/artemSorokin1/product-grpc-api/pkg/api/product;product";
+
+service ProductService {
+  rpc GetProducts(ProductsRequest) returns (ProductsResponse);
+}
+
+message ProductsRequest {
+  repeated string product_id = 1;
+}
+
+message ProductsResponse {
+  repeated Product items = 1;
+  int32 total_price = 2;
+}
+
+message Product {
+  string id = 1;
+  string name = 2;
+  int32 price = 3;
+  string image_url = 4;
+  int32 quantity = 5;
+}
+
