@@ -14,14 +14,14 @@ message ProductsRequest {
 
 message ProductsResponse {
   repeated Product items = 1;
-  int32 total_price = 2;
+  int64 total_price = 2;
 }
 
 message Product {
   string id = 1;
   string name = 2;
-  int32 price = 3;
+  int64 price = 3;
   string image_url = 4;
-  int32 quantity = 5;
+  int64 quantity = 5;
 }
 
